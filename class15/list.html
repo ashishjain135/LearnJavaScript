@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Problem add 7 in list-->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+
+
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <script>
+        /**
+         * Approach 
+         * select - the ul element
+         * eventLister -> No need
+         * create a new element -item 7
+         * insert the new li in the correct position 
+         */ 
+        const allitems = document.querySelectorAll("li")
+        console.log("allitems", allitems);
+
+        const indexThatHasB = allitems[6]; //item at index 6 at 8 
+        
+        const sevenElem = document.createElement("li");
+        sevenElem.innerText = "7";
+        //get the ul node
+        const ulNode = document.querySelector("ul"); 
+        ulNode.insertBefore(sevenElem,indexThatHasB);
+        //parentNode.insertBefore(newNode, refrenceNode)
+   </script>
+</body>
+</html>

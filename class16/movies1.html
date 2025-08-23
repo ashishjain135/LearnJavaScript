@@ -1,0 +1,139 @@
+<!-- Problem 1 how to filter works -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 5rem;
+        }
+        .movies{
+            height: 10rem;
+            width: 10rem;
+            margin:1rem;
+        }
+        .price{
+           background-color:  rgb(0, 102, 128); 
+           height: 8rem;
+           padding: 1.5rem;
+           font-size: 2rem;
+        }
+        .heading{
+            background-color: rgba(12, 12, 11, 0.8);
+            height: 2rem;
+        }
+        .heading,.price{
+            color: white; 
+            text-align: center;
+            margin:0;
+        }
+        select,h1{
+            position: fixed;
+        }
+        h1{
+            top: 0px;
+        }
+        select{
+            width:8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>BOOK MY SHOW</h1>
+    <select>
+        <option value="none">None</option>
+        <option value="action">Action</option>
+        <option value="comedy">Comedy</option>
+        <option value="romance">Romance</option>
+    </select>
+    <div class="movies">
+        <h3 class="heading">Action Movie -1</h3>
+        <p class="price" data-category="action">Rs.100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Action movie -2</h3>
+        <p class="price" data-category="action">Rs-200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Action movies -3</h3>
+        <p class="price" data-category="action">Rs.150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance -1</h3>
+        <p class="price" data-category="romance">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance -2</h3>
+        <p class="price" data-category="romance">Rs 150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance -3</h3>
+        <p class="price" data-category="romance">Rs 150</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance -5</h3>
+        <p class="price" data-category="romance">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Action -4</h3>
+        <p class="price" data-category="action">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Comedy -1</h3>
+        <p class="price" data-category="comedy">Rs 100</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Romance -4</h3>
+        <p class="price" data-category="romance">Rs 200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">comedy -2</h3>
+        <p class="price" data-category="comedy">Rs 200</p>
+    </div>
+    <script>
+        //Q Make the filter Work
+        //select the dropdown
+        const select = document.querySelector("select");
+        //add event listner
+        select.addEventListener("change",function(){
+            const filterVal = select.value;
+            console.log(filterVal);
+
+            //get all the movies
+            const alltickets = document.querySelectorAll(".price");
+            if(filterVal == 'none'){
+                for(let i = 0; i<alltickets.length; i++){
+                    alltickets[i].parentElement.style.display="";
+                }
+                //show all the movies
+
+            }else{ 
+                //show the movies that match the filter 
+                //loop over all the movies
+                //get the category of the movie from the attribute
+                //if the attribute is equal to the filter value, show the tickets 
+                //else hide the ticket, set the style display to none 
+                //we need to hide the parent element of the paragraph
+                for(let i = 0; i<alltickets.length; i++){
+                    if(alltickets[i].getAttribute("data-category") == filterVal){
+                        alltickets[i].parentElement.style.display="";
+
+                    }else{
+                        alltickets[i].parentElement.style.display="none";
+                    }
+                }
+            }
+        });
+
+
+    </script>
+</body>
+</html>

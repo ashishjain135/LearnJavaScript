@@ -1,0 +1,51 @@
+<!-- Peoblem 3 user can delete list or entire list -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: blue;
+        }
+        button{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <button id ="removeAll">Remove All</button>
+    <ul>
+        <li>
+            <p>Task -1</p>
+            <button class="delete_button">Delete</button>
+        </li>
+         <li>
+            <p>Task -2</p>
+            <button class="delete_button">Delete</button>
+        </li>
+         <li>
+            <p>Task -3</p>
+            <button class="delete_button">Delete</button>
+        </li>
+         <li>
+            <p>Task -4</p>
+            <button class="delete_button">Delete</button>
+        </li>
+    </ul>
+    <script>
+        document.getElementById("removeAll").addEventListener("click", function(){
+            const ul = document.querySelector("ul");
+            ul.innerText=""
+        });
+        const alldeleteButtons = document.querySelectorAll(".delete_button");
+        for(let i = 0; i<alldeleteButtons.length; i++){
+            alldeleteButtons[i].addEventListener('click',function(event){
+                console.log(event);
+                event.target.parentElement.remove();
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id ="btn">click me</button>
+    <!-- <button class="btn2">Click me as well</button> -->
+    <script>
+        /**
+         * getElementByid
+         * querySelector
+         * class
+         */
+        // const btnElem = document.querySelector('#btn');
+        // console.log("elem",btnElem)
+        // const btnElem2 = document.querySelector('.btn2');
+        // console.log("elem",btnElem2)
+        // const btnElem3 = document.querySelector('button');
+        // console.log("elem", btnElem3)
+
+
+        // addEventLister
+            // selecting a Element
+        const btnElem = document.querySelector('#btn');
+        console.log("elem",btnElem);
+        //add listner
+        btnElem.addEventListener('click',function(e){
+            console.log("button clicked")
+
+            //create a new Element
+            const newElem = document.createElement('div');
+            newElem.innerText = "Hello in DoM";
+            const body = document.querySelector('body');
+            //append the new element inside the body 
+            body.append(newElem)
+        })
+    </script>
+</body>
+</html>

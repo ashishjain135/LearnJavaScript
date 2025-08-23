@@ -1,0 +1,35 @@
+<!-- Problem 4 Create A destroy button when click on it so self destroy but 2 new button is created-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="doubleHolder">
+        <button class="double">Double</button>
+    </div>
+    <script>
+        //step 1 select the button 
+        const doublebtn = document.querySelector(".double");
+        //add an event 
+        doublebtn.addEventListener("click",function(e){
+            //create two buttons, 
+            const btn1 = document.createElement('button');
+            btn1.setAttribute("class","first-button");
+            btn1.innerText ="first button";
+            //create second button
+            const btn2 = document.createElement('button');
+            btn2.setAttribute("class","second-button");
+            btn2.innerText="second button";
+
+            //get the parent Element
+            e.target.parentElement.appendChild(btn1);
+            e.target.parentElement.appendChild(btn2);
+            //Remove the Click button
+            e.target.remove();
+        })
+    </script>
+</body>
+</html>

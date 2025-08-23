@@ -1,0 +1,40 @@
+<!-- Problem 5 Create A destroy button when click on it so self destroy but 2 new button is created-->
+ <!--when new button click again same happen seld button delete new two create just like -->
+ <!--Just like Recursion-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="doubleHolder">
+        <button class="double">Double</button>
+    </div>
+    <script>
+        //step 1 select the button 
+        const doublebtn = document.querySelector(".double");
+        //add an event 
+        function cb(e){
+            //create a new button
+                const btn1 = document.createElement('button');
+                //set the class of the new button
+                btn1.setAttribute("class","double");
+                btn1.addEventListener("click",cb);
+                btn1.innerText ="first button";
+                //create second button
+                const btn2 = document.createElement('button');
+                btn2.setAttribute("class","second-button");
+                btn2.innerText="second button";
+
+                //get the parent Element
+                e.target.parentElement.appendChild(btn1);
+                e.target.parentElement.appendChild(btn2);
+                //Remove the Click button
+                e.target.remove();
+        }
+        doublebtn.addEventListener("click",cb);
+    </script>
+</body>
+</html>

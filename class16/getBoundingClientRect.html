@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- getboundingClientRect() method return the size of an element and its positionsto the viewport. 
+     This method return a DOMReact object with the Position.
+     full form of this is Documen Object Model Rectangle.
+       -->
+    <div id="hello">               <br>                Hello </div>
+    <script>
+        const helloDiv = document.querySelector('#hello');
+        const result = helloDiv.getBoundingClientRect();
+        console.log(result);
+    </script>
+</body>
+</html>
