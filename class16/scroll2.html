@@ -43,24 +43,28 @@
         */
        document.addEventListener("keydown", function(e){
         console.log(e.key);
-        if(e.key == 1){
+        if(e.key == "1"){
             // go to secion 1
             s1.scrollIntoView();
+            //smooth is scroll process like smooth, instant , auto
         }else if(e.key == 2){
             // go to section 2
             s2.scrollIntoView();
         }else if(e.key == 3){
             //go to section 3 
-            s3.scrollIntoView();
+            //s3.scrollIntoView({behavior:"auto"});
+            s3.scrollByIntoView();
         }
         else if(e.key =="t"){
             //go to top 
-            /// window.scrollBy(0,-document.querySelector("html").getBoundingClientRect().height);
-            window.scrollBy(0,0);
+            window.scrollBy(0,-document.querySelector("html").getBoundingClientRect().height);
+            //window.scrollBy(0,0);
+            //window.scrollBy({top: 0, behavior: "smooth"});
         }
         else if(e.key == "b"){
             //go to bottom 
             window.scrollBy(0,document.querySelector("html").getBoundingClientRect().height);
+            //window.scrollBy({top: document.body.scrollHeight, behavior: "smooth"})
         }
 
        })
