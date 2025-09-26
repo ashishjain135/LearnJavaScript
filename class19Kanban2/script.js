@@ -11,6 +11,7 @@ const allPriorityColors = document.querySelectorAll(".priority-color")
 
 let modelPriorityColor="black";
 
+
 // create removeBtn and need flagBtn
 const removeBtn = document.querySelector(".remove-btn")
 let removeTaskFlag = false;
@@ -47,11 +48,7 @@ function handleRemoval(ticket){
 }
 alltickets.forEach(function(ticket){
     handleRemoval(ticket);
-})
-
-
-
-
+});
 
 
 //ticket create when addBtn click
