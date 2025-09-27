@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day22 Event propagation</title>
+    <style>
+        #grandParent{
+            background-color: red;
+            height: 100Px;
+            width: 100px;
+        }
+        #parent{
+            background-color: green;
+            height: 75Px;
+            width: 75px;
+        }
+        #child{
+            background-color: blue;
+            height: 50Px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!--Event propagation 
+    1.capturing
+    2.bubbling -->
+    <div id="grandParent">
+        <div id="parent">
+            <div id="child">
+             
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
