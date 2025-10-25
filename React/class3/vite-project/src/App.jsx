@@ -5,6 +5,9 @@ import './App.css'
 import SimpleForm from './components/Form';
 import TemperatureInput from './components/Temperatureinput';
 import TemperatureDisplay from './components/Temperaturedisplay';
+import ExampleComponent from './components/Effect';
+import FetchDataComponent from './components/FetchData';
+
 
 function App() {
   const [count, setCount] = useState(0); //return an array with two elements
@@ -37,14 +40,18 @@ const handleTemperatureChange = (newtemperature) =>{
   }
   return (
     <>
-      <p>Count : {count}</p>
+      {/* <p>Count : {count}</p>
       <button onClick = {incrementCount}>Increment</button>
       <button onClick={decrementCount}>Decrement</button>
       <SimpleForm />
 
-      {/**import temperature files  */}
+      {/**import temperature files*}  
       <TemperatureInput temperature={temperature} onTempearatureChange={handleTemperatureChange}/>
-      <TemperatureDisplay temperature={temperature} />
+      <TemperatureDisplay temperature={temperature} /> */}
+
+
+        <ExampleComponent />
+        <FetchDataComponent />
     </>
   )
 }
