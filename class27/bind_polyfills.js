@@ -1,5 +1,5 @@
 //in bind methid we can use polyfills to create our own bind method
-
+//most famous interview topic 
 Function.prototype.myBind = function(context, ...boundArgs){
 
     //check whether this is function or not

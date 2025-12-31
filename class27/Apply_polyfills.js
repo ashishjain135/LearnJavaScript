@@ -18,7 +18,7 @@ Function.prototype.myApply = function(context={}, argsArray=[]){
         throw new Error("need to pass array as second argument");
     }
 
-    context.myFunction = this; //this refer to the function on which myApply is called // buyCar function
+    context.myFunction = this; //this refer to the function on which myApply is called // buyCar function 
     context.myFunction(...argsArray); //...args is spread operator to convert array into comma separated values
 
     // this(...argsArray);
